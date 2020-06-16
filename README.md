@@ -1,6 +1,5 @@
-# Django Template Web Application
+# REST API Framework in Django
 
-A web application for managing credentials.
 
 ## Set up the project
 
