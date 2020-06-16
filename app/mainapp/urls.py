@@ -1,4 +1,4 @@
-"""pwd_manager URL Configuration
+"""URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -23,7 +23,10 @@ urlpatterns = [
 
     path('accounts/', include('django.contrib.auth.urls')),
 
-    path('auth/', include('social_django.urls', namespace='social')),
+    path('rest/', include(('rest.urls', 'rest'), namespace='rest')),
+
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
     path('', include(('apps.urls', 'apps'), namespace='apps')),
+
 ]

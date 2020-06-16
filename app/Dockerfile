@@ -1,10 +1,10 @@
 FROM alpine:3.8
 
-COPY . /opt/pwd-manager
-WORKDIR /opt/pwd-manager
+COPY . /opt/djangoapp
+WORKDIR /opt/djangoapp
 
 ENV PYTHON_ENV=/opt/python \
-    MANAGER_PATH=/opt/pwd-manager \
+    MANAGER_PATH=/opt/djangoapp \
     ALLOWED_HOSTS=0.0.0.0
 
 ENV PATH=$PATH:$PYTHON_ENV/bin:$MANAGER_PATH

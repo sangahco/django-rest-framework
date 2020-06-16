@@ -36,11 +36,11 @@ We create a superuser for managing users and groups:
 
 `python manage.py createsuperuser`
 
-Before starting the application some configuration is required, create a new file named `local.settings.py` into the `pwd_manager` folder, just near the `settings.py` and add all the required variables.
+Before starting the application some configuration is required, create a new file named `local.settings.py` into the `mainapp` folder, just near the `settings.py` and add all the required variables.
 
 Now we are ready to run the application:
 
-    $ ./pwd-manager-auto.sh
+    $ ./django-auto.sh
 
 ## Production
 
@@ -53,10 +53,10 @@ Also we need to collect the static files since django will refuse to serve stati
 
     $ python manage.py collectstatic --clear
 
-A new folder `static` should be created under the project folder.
+A new folder `static` will be created under the project folder.
 
 In the web server configuration we need to add the static location in order to serve those files:
 
     location /static/ {
-        root /media/usb2/pwd_manager;
+        root <path>/app;
     }

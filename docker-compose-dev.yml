@@ -9,4 +9,4 @@ services:
     ports:
     - "$MANAGER_LISTEN_PORT:8091"
     volumes: 
-    - "./local_settings.py:/opt/pwd-manager/pwd_manager/local_settings.py"
+    - "./local_settings.py:/opt/djangoapp/mainapp/local_settings.py"

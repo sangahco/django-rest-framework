@@ -3,12 +3,12 @@ version: "3"
 services: 
 
   manager:
-    image: sangah/pwd-manager:${MANAGER_VERION}
+    image: sangah/djangoapp:${MANAGER_VERION}
     environment:
     - ALLOWED_HOSTS
     volumes: 
-    - "web-static:/opt/pwd-manager/static"
-    - "./local_settings.py:/opt/pwd-manager/pwd_manager/local_settings.py"
+    - "web-static:/opt/djangoapp/static"
+    - "./local_settings.py:/opt/djangoapp/mainapp/local_settings.py"
     restart: "unless-stopped"
 
   nginx:
