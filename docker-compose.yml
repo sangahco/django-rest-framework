@@ -2,7 +2,7 @@ version: "3"
 
 services: 
 
-  manager:
+  django:
     image: sangah/djangoapp:${MANAGER_VERION}
     environment:
     - ALLOWED_HOSTS
