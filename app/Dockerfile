@@ -4,10 +4,10 @@ COPY . /opt/djangoapp
 WORKDIR /opt/djangoapp
 
 ENV PYTHON_ENV=/opt/python \
-    MANAGER_PATH=/opt/djangoapp \
+    APP_HOME=/opt/djangoapp \
     ALLOWED_HOSTS=0.0.0.0
 
-ENV PATH=$PATH:$PYTHON_ENV/bin:$MANAGER_PATH
+ENV PATH=$PATH:$PYTHON_ENV/bin:$APP_HOME
 
 RUN set -e && \
     apk add --no-cache \
@@ -31,8 +31,8 @@ RUN set -e && \
 
 EXPOSE 8091
 
-VOLUME [ "$MANAGER_PATH/data", "$MANAGER_PATH/static" ]
+VOLUME [ "$APP_HOME/data", "$APP_HOME/static" ]
 
-RUN chmod +x $MANAGER_PATH/pwd-manager-auto.sh
+RUN chmod +x $APP_HOME/django-auto.sh
 #CMD [ "pwd-manager-auto.sh" ]
-ENTRYPOINT ["bash", "pwd-manager-auto.sh"]
+ENTRYPOINT ["bash", "django-auto.sh"]
