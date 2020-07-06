@@ -15,7 +15,7 @@ services:
     build: nginx
     #network_mode: "service:manager"
     ports:
-    - "$MANAGER_LISTEN_PORT:80"
+    - "$APP_LISTEN_PORT:80"
     depends_on: 
     - manager
     volumes: 

@@ -7,6 +7,6 @@ services:
     environment:
     - ALLOWED_HOSTS
     ports:
-    - "$MANAGER_LISTEN_PORT:8091"
+    - "$APP_LISTEN_PORT:8091"
     volumes: 
     - "./local_settings.py:/opt/djangoapp/mainapp/local_settings.py"
